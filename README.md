@@ -1,202 +1,105 @@
-🗳️ Online Voting System
-A secure, full-stack online voting system built with Python Flask backend and HTML/CSS/JS frontend.
+.
 
+🗳️ Online Voting System (Flask + SQLite)
 
+A full-stack Online Voting System built using Flask (Python) for the backend and HTML, CSS, JavaScript for the frontend.
+This project supports secure voting, admin management, real-time results, and analytics.
 
-🌐 Live Demo
-Frontend (Voting Interface): https://github.com/Aswini-ox/online-voting-system.git
+🚀 Features
+👤 Voter Features
 
-Backend API: https://blossomless-stefany-rancid.ngrok-free.dev/api (temporary, changes every 2 hours)
+View list of candidates with images
 
-📋 Features
-✅ User Features:
+Vote only once using voter ID
 
-Secure voter login system
+Real-time vote confirmation
 
-Beautiful candidate cards with images
+View election results & statistics
 
-One vote per voter prevention
+🧑‍💼 Admin Features
 
-Live results with animated charts
+Admin login
 
-Mobile-responsive design
+Add new candidates
 
-✅ Admin Features:
+View all voters
 
-Admin authentication panel
+Reset election data
 
-Add/remove candidates
+View system statistics & voting trends
 
-Reset entire election
+📊 Analytics
 
-View voting statistics
+Total votes & voters
 
-Export election data
+Voting percentage
 
-✅ Technical Features:
+Leading candidate
 
-SQLite database with dummy data
+Voting timeline (last 7 days)
 
-RESTful API endpoints
+Most active voting hour
 
-CORS enabled for frontend-backend communication
-
-Gradient UI with hover animations
-Quick Start
-1. Clone & Setup
-bash
-# Clone repository
-git clone https://github.com/yourusername/online-voting-system.git
-cd online-voting-system
-
-# Install Python dependencies
-pip install flask flask-cors
-2. Run Backend Server
-bash
-python voting.py
-Backend starts at: http://localhost:5000
-
-3. Open Frontend
-Simply open online.html in any modern browser.
-
-📁 Project Structure
-text
+🛠️ Tech Stack
+Layer	Technology
+Backend	Python, Flask
+Database	SQLite
+Frontend	HTML, CSS, JavaScript
+API Style	REST API
+Others	Flask-CORS
+📂 Project Structure
 online-voting-system/
-├── voting.py              # Flask backend server (23KB)
-├── online.html           # Complete frontend - HTML/CSS/JS (60KB)
-├── README.md            # This documentation file
-├── requirements.txt     # Python dependencies (optional)
-└── voting.db           # SQLite database (auto-generated)
-👥 Usage Guide
-For Voters:
-Open online.html in browser
+│
+├── voting.py          # Flask backend
+├── voting.db          # SQLite database (auto-generated)
+├── index.html         # Frontend UI
+├── README.md          # Project documentation
 
-Click "Vote Now" tab
+2️⃣ Install Dependencies
+pip install flask flask-cors
 
-Login with any NEW Voter ID (e.g., VOTER101, NEWUSER001)
-
-Select your preferred candidate
-
-View live results instantly
-
-For Admins:
-Access: https://blossomless-stefany-rancid.ngrok-free.dev
-
-Login with: admin / admin123
-
-Manage candidates, reset elections, view stats
-
-Demo Credentials:
-Already Voted: VOTER001 to VOTER100 (60 users)
-
-New Voters: Use any new ID like TEST001, FRIEND001
-
-Admin: admin / admin123
-
-Supervisor: supervisor / super123
-
-Manager: manager / manager123
-
-🛠️ Deployment
-1. Temporary Public Access (ngrok):
-bash
-# Start Flask backend
+3️⃣ Run the Backend Server
 python voting.py
 
-# In NEW terminal, start ngrok tunnel
-ngrok config add-authtoken YOUR_TOKEN
-ngrok http 5000
-Copy the https://*.ngrok-free.dev URL shown.
 
-2. Permanent Frontend (GitHub Pages):
-Upload online.html to GitHub repository
+Server will start at:
 
-Enable GitHub Pages in Settings → Pages
+http://localhost:5000
 
-Your site: https://username.github.io/repository-name/
-
-3. Update Frontend Connection:
-In online.html, change line 87:
-
-javascript
-// Change this:
-const API_BASE = 'http://localhost:5000/api';
-// To your ngrok URL:
-const API_BASE = 'https://blossomless-stefany-rancid.ngrok-free.dev/api';
-🎨 UI Features
-Gradient Background: Orange (#f5af19) to Red (#f12711)
-
-Animated Cards: Hover effects and transitions
-
-Live Progress Bars: Animated voting percentages
-
-Candidate Images: Real photos from Unsplash
-
-Party Symbols: Color-coded with icons
-
-Responsive Design: Works perfectly on mobile/tablet/desktop
-📚 Tech Stack
-Backend: Python 3.9+, Flask, SQLite
-
-Frontend: HTML5, CSS3, Vanilla JavaScript
-
-Database: SQLite with direct SQL execution
-
-Deployment: Ngrok (tunnel), GitHub Pages (frontend hosting)
-
-Styling: Custom CSS with gradients, animations, Flexbox/Grid
-
-Icons: Font Awesome 6.4.0
-
-Demo Images: Unsplash (attribution-free)
-
-👨‍💻 Development Notes
-File Details:
-voting.py (23,005 bytes): Complete Flask backend with:
-
-Database initialization with dummy data
-
-8 API endpoints + admin functions
-
-SQLite connection management
-
-CORS configuration for frontend access
-
-online.html (59,845 bytes): Single-file frontend with:
-
-4 pages: Home, Vote, Results, Admin
-
-600+ lines of CSS with animations
-
-400+ lines of JavaScript with API integration
-
-Responsive design for all screen sizes
-
-Database Schema:
-sql
-candidates (id, name, party, bio, color, votes, avatar, image_url)
-voters (id, name, email, has_voted, vote_time)
-admin (username, password, email)
-votes_log (id, voter_id, candidate_id, vote_time)
-🤝 How to Contribute
-Fork this repository
-
-Create a feature branch: git checkout -b feature-name
-
-Make your changes
-
-Test thoroughly
-
-Submit a Pull Request
-
-🙏 Acknowledgments
-Icons by Font Awesome
-
-Demo images from Unsplash
-
-Gradient inspiration from modern web design trends
-
-ngrok for easy tunneling solution
+🌐 API Endpoints
+Endpoint	Method	Description
+/api/candidates	GET	Get all candidates
+/api/vote	POST	Submit a vote
+/api/results	GET	Get election results
+/api/stats	GET	Get system statistics
+/api/voter/<id>	GET	Check voter status
+/api/admin/login	POST	Admin login
+/api/admin/reset	POST	Reset election
+/api/health	GET	Health check
+🔐 Admin Credentials (Demo)
+Username: admin
+Password: admin123
 
 
-Keep Servers Running: Remember to keep both Flask and ngrok terminals open
+⚠️ For demo/college use only. Passwords are not encrypted.
+
+🖼️ Screenshots
+<img width="1897" height="888" alt="Screenshot 2026-02-01 195550" src="https://github.com/user-attachments/assets/60ea453f-bbd5-4289-aa8f-e1766e4bc7bd" />
+<img width="1894" height="879" alt="Screenshot 2026-02-01 195605" src="https://github.com/user-attachments/assets/707ca003-83be-43cb-9c36-c68bcb49fcd2" />
+<img width="1890" height="877" alt="Screenshot 2026-02-01 195702" src="https://github.com/user-attachments/assets/95b03b9b-1b44-4816-896a-83059424c5e3" />
+<img width="1895" height="881" alt="Screenshot 2026-02-01 195746" src="https://github.com/user-attachments/assets/71761db3-40f2-4ff2-b0be-24b4b805e5bd" />
+<img width="1897" height="877" alt="Screenshot 2026-02-01 195806" src="https://github.com/user-attachments/assets/fd321733-7341-418d-9be2-c8d103862be1" />
+<img width="1896" height="879" alt="Screenshot 2026-02-01 195828" src="https://github.com/user-attachments/assets/f85f45c3-d55d-47a1-978d-355a9b67edea" />
+<img width="1890" height="876" alt="Screenshot 2026-02-01 195851" src="https://github.com/user-attachments/assets/5e6ae3a0-0ef2-4560-88e5-ec9ca91b4a79" />
+<img width="1885" height="876" alt="Screenshot 2026-02-01 195910" src="https://github.com/user-attachments/assets/c2b2e36f-04a3-4b16-9550-bd8c5416714c" />
+
+
+👨‍💻 Author
+
+ASWINI
+Department of Computer Science
+VSB COLLEGE OF ENINEERING TECHNICAL CAMPUS COIMBATORE
+
+📄 License
+
+This project is for educational purposes only.
