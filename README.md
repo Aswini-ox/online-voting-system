@@ -1,10 +1,10 @@
 🗳️ Online Voting System
 A secure, full-stack online voting system built with Python Flask backend and HTML/CSS/JS frontend.
 
-https://img.shields.io/badge/Status-Live-brightgreen https://img.shields.io/badge/Python-3.9%252B-blue https://img.shields.io/badge/Flask-2.3%252B-lightgrey https://img.shields.io/badge/License-MIT-green
+
 
 🌐 Live Demo
-Frontend (Voting Interface): https://yourusername.github.io/online-voting-system/
+Frontend (Voting Interface): https://github.com/Aswini-ox/online-voting-system.git
 
 Backend API: https://blossomless-stefany-rancid.ngrok-free.dev/api (temporary, changes every 2 hours)
 
